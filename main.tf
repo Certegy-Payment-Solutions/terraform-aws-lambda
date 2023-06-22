@@ -138,6 +138,7 @@ resource "aws_lambda_function" "this" {
   ]
 timeouts {
     create = "30m"
+    update = "30m"
   }
 }
 
