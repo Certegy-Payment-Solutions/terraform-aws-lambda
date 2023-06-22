@@ -136,6 +136,9 @@ resource "aws_lambda_function" "this" {
     aws_iam_role_policy_attachment.vpc,
     aws_iam_role_policy_attachment.tracing,
   ]
+timeouts {
+    create = "30m"
+  }
 }
 
 resource "aws_lambda_layer_version" "this" {
