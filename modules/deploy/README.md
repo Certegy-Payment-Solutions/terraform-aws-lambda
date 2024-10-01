@@ -22,7 +22,7 @@ module "lambda_function" {
 
   function_name = "my-lambda1"
   handler       = "index.lambda_handler"
-  runtime       = "python3.8"
+  runtime       = "python3.12"
 
   source_path = "../src/lambda-function1"
 }
@@ -95,12 +95,12 @@ module "lambda" {
 * [Deploy](https://github.com/terraform-aws-modules/terraform-aws-lambda/tree/master/examples/deploy) - Creates Lambda Function, Alias, and all resources required to create deployments using AWS CodeDeploy.
 
 
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13.1 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 3.35 |
 | <a name="requirement_local"></a> [local](#requirement\_local) | >= 1.0 |
 | <a name="requirement_null"></a> [null](#requirement\_null) | >= 2.0 |
@@ -191,7 +191,7 @@ No modules.
 | <a name="output_codedeploy_iam_role_name"></a> [codedeploy\_iam\_role\_name](#output\_codedeploy\_iam\_role\_name) | Name of IAM role used by CodeDeploy |
 | <a name="output_deploy_script"></a> [deploy\_script](#output\_deploy\_script) | Path to a deployment script |
 | <a name="output_script"></a> [script](#output\_script) | Deployment script |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- END_TF_DOCS -->
 
 ## Authors
 

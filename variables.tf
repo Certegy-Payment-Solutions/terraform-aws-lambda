@@ -34,6 +34,12 @@ variable "create_lambda_function_url" {
   default     = false
 }
 
+variable "create_sam_metadata" {
+  description = "Controls whether the SAM metadata null resource should be created"
+  type        = bool
+  default     = false
+}
+
 variable "putin_khuylo" {
   description = "Do you agree that Putin doesn't respect Ukrainian sovereignty and territorial integrity? More info: https://en.wikipedia.org/wiki/Putin_khuylo!"
   type        = bool
@@ -72,11 +78,6 @@ variable "runtime" {
   description = "Lambda Function runtime"
   type        = string
   default     = ""
-
-  #  validation {
-  #    condition     = can(var.create && contains(["nodejs10.x", "nodejs12.x", "java8", "java11", "python2.7", " python3.6", "python3.7", "python3.8", "dotnetcore2.1", "dotnetcore3.1", "go1.x", "ruby2.5", "ruby2.7", "provided"], var.runtime))
-  #    error_message = "The runtime value must be one of supported by AWS Lambda."
-  #  }
 }
 
 variable "lambda_role" {
@@ -181,6 +182,12 @@ variable "tags" {
   default     = {}
 }
 
+variable "function_tags" {
+  description = "A map of tags to assign only to the lambda function"
+  type        = map(string)
+  default     = {}
+}
+
 variable "s3_object_tags" {
   description = "A map of tags to assign to S3 bucket object."
   type        = map(string)
@@ -241,6 +248,18 @@ variable "replacement_security_group_ids" {
   default     = null
 }
 
+variable "timeouts" {
+  description = "Define maximum timeout for creating, updating, and deleting Lambda Function resources"
+  type        = map(string)
+  default     = {}
+}
+
+variable "skip_destroy" {
+  description = "Set to true if you do not wish the function to be deleted at destroy time, and instead just remove the function from the Terraform state. Useful for Lambda@Edge functions attached to CloudFront distributions."
+  type        = bool
+  default     = null
+}
+
 ###############
 # Function URL
 ###############
@@ -267,6 +286,12 @@ variable "invoke_mode" {
   description = "Invoke mode of the Lambda Function URL. Valid values are BUFFERED (default) and RESPONSE_STREAM."
   type        = string
   default     = null
+}
+
+variable "s3_object_override_default_tags" {
+  description = "Whether to override the default_tags from provider? NB: S3 objects support a maximum of 10 tags."
+  type        = bool
+  default     = false
 }
 
 ########
@@ -413,6 +438,18 @@ variable "cloudwatch_logs_kms_key_id" {
   default     = null
 }
 
+variable "cloudwatch_logs_skip_destroy" {
+  description = "Whether to keep the log group (and any logs it may contain) at destroy time."
+  type        = bool
+  default     = false
+}
+
+variable "cloudwatch_logs_log_group_class" {
+  description = "Specified the log class of the log group. Possible values are: `STANDARD` or `INFREQUENT_ACCESS`"
+  type        = string
+  default     = null
+}
+
 variable "cloudwatch_logs_tags" {
   description = "A map of tags to assign to the resource."
   type        = map(string)
@@ -477,6 +514,12 @@ variable "policy_name" {
 
 variable "attach_cloudwatch_logs_policy" {
   description = "Controls whether CloudWatch Logs policy should be added to IAM role for Lambda Function"
+  type        = bool
+  default     = true
+}
+
+variable "attach_create_log_group_permission" {
+  description = "Controls whether to add the create log group permission to the CloudWatch logs policy"
   type        = bool
   default     = true
 }
@@ -671,6 +714,12 @@ variable "s3_server_side_encryption" {
   default     = null
 }
 
+variable "s3_kms_key_id" {
+  description = "Specifies a custom KMS key to use for S3 object encryption."
+  type        = string
+  default     = null
+}
+
 variable "source_path" {
   description = "The absolute path to a local file or directory containing your Lambda source code"
   type        = any # string | list(string | map(any))
@@ -735,4 +784,38 @@ variable "recreate_missing_package" {
   description = "Whether to recreate missing Lambda package if it is missing locally or not"
   type        = bool
   default     = true
+}
+
+variable "trigger_on_package_timestamp" {
+  description = "Whether to recreate the Lambda package if the timestamp changes"
+  type        = bool
+  default     = true
+}
+
+############################################
+# Lambda Advanced Logging Settings
+############################################
+
+variable "logging_log_format" {
+  description = "The log format of the Lambda Function. Valid values are \"JSON\" or \"Text\"."
+  type        = string
+  default     = "Text"
+}
+
+variable "logging_application_log_level" {
+  description = "The application log level of the Lambda Function. Valid values are \"TRACE\", \"DEBUG\", \"INFO\", \"WARN\", \"ERROR\", or \"FATAL\"."
+  type        = string
+  default     = "INFO"
+}
+
+variable "logging_system_log_level" {
+  description = "The system log level of the Lambda Function. Valid values are \"DEBUG\", \"INFO\", or \"WARN\"."
+  type        = string
+  default     = "INFO"
+}
+
+variable "logging_log_group" {
+  description = "The CloudWatch log group to send logs to."
+  type        = string
+  default     = null
 }

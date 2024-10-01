@@ -5,7 +5,6 @@ provider "aws" {
   skip_metadata_api_check     = true
   skip_region_validation      = true
   skip_credentials_validation = true
-  skip_requesting_account_id  = true
 }
 
 resource "random_pet" "this" {
@@ -18,9 +17,9 @@ module "lambda_function_in_vpc" {
   function_name = "${random_pet.this.id}-lambda-in-vpc"
   description   = "My awesome lambda function"
   handler       = "index.lambda_handler"
-  runtime       = "python3.8"
+  runtime       = "python3.12"
 
-  source_path = "${path.module}/../fixtures/python3.8-app1"
+  source_path = "${path.module}/../fixtures/python-app1"
 
   vpc_subnet_ids                     = module.vpc.intra_subnets
   vpc_security_group_ids             = [module.vpc.default_security_group_id]
@@ -31,7 +30,7 @@ module "lambda_function_in_vpc" {
 
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
-  version = "~> 3.0"
+  version = "~> 5.0"
 
   name = random_pet.this.id
   cidr = "10.10.0.0/16"

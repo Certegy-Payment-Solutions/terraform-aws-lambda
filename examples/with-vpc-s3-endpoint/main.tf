@@ -5,7 +5,6 @@ provider "aws" {
   skip_metadata_api_check     = true
   skip_region_validation      = true
   skip_credentials_validation = true
-  skip_requesting_account_id  = true
 }
 
 data "aws_region" "current" {}
@@ -21,9 +20,9 @@ module "lambda_s3_write" {
 
   function_name = random_pet.this.id
   handler       = "index.lambda_handler"
-  runtime       = "python3.8"
+  runtime       = "python3.12"
 
-  source_path = "${path.module}/../fixtures/python3.8-app2"
+  source_path = "${path.module}/../fixtures/python-app2"
 
   environment_variables = {
     BUCKET_NAME = module.s3_bucket.s3_bucket_id
@@ -60,7 +59,7 @@ data "aws_ec2_managed_prefix_list" "this" {
 
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
-  version = "~> 3.0"
+  version = "~> 5.0"
 
   name = random_pet.this.id
   cidr = "10.0.0.0/16"
@@ -102,7 +101,7 @@ module "vpc" {
 
 module "vpc_endpoints" {
   source  = "terraform-aws-modules/vpc/aws//modules/vpc-endpoints"
-  version = "~> 3.0"
+  version = "~> 5.0"
 
   vpc_id = module.vpc.vpc_id
 

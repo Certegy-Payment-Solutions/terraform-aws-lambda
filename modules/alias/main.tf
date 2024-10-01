@@ -141,6 +141,13 @@ resource "aws_lambda_event_source_mapping" "this" {
     }
   }
 
+  dynamic "scaling_config" {
+    for_each = try([each.value.scaling_config], [])
+    content {
+      maximum_concurrency = try(scaling_config.value.maximum_concurrency, null)
+    }
+  }
+
   dynamic "self_managed_event_source" {
     for_each = try(each.value.self_managed_event_source, [])
     content {
@@ -160,8 +167,12 @@ resource "aws_lambda_event_source_mapping" "this" {
     for_each = try(each.value.filter_criteria, null) != null ? [true] : []
 
     content {
-      filter {
-        pattern = try(each.value["filter_criteria"].pattern, null)
+      dynamic "filter" {
+        for_each = try(flatten([each.value.filter_criteria]), [])
+
+        content {
+          pattern = try(filter.value.pattern, null)
+        }
       }
     }
   }

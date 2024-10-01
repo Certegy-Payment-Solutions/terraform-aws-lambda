@@ -5,7 +5,6 @@ provider "aws" {
   skip_metadata_api_check     = true
   skip_region_validation      = true
   skip_credentials_validation = true
-  skip_requesting_account_id  = true
 }
 
 ################################################################################
@@ -17,7 +16,7 @@ module "lambda" {
 
   function_name           = random_pet.this.id
   handler                 = "index.lambda_handler"
-  runtime                 = "python3.8"
+  runtime                 = "python3.12"
   code_signing_config_arn = aws_lambda_code_signing_config.this.arn
   create_package          = false
 
@@ -34,7 +33,7 @@ module "lambda" {
 resource "aws_s3_object" "unsigned" {
   bucket = module.s3_bucket.s3_bucket_id
   key    = "unsigned/existing_package.zip"
-  source = "${path.module}/../fixtures/python3.8-zip/existing_package.zip"
+  source = "${path.module}/../fixtures/python-zip/existing_package.zip"
 
   # Making sure that S3 versioning configuration is propagated properly
   depends_on = [

@@ -2,6 +2,256 @@
 
 All notable changes to this project will be documented in this file.
 
+## [7.10.0](https://github.com/terraform-aws-modules/terraform-aws-lambda/compare/v7.9.0...v7.10.0) (2024-09-29)
+
+
+### Features
+
+* Add `tumbling_window_in_seconds` ([#623](https://github.com/terraform-aws-modules/terraform-aws-lambda/issues/623)) ([eedacff](https://github.com/terraform-aws-modules/terraform-aws-lambda/commit/eedacffef287cb02f776da4950e8345d9ec0200f))
+
+## [7.9.0](https://github.com/terraform-aws-modules/terraform-aws-lambda/compare/v7.8.1...v7.9.0) (2024-09-10)
+
+
+### Features
+
+* Added more examples for Rust, Go, Java runtimes ([#612](https://github.com/terraform-aws-modules/terraform-aws-lambda/issues/612)) ([a6fe411](https://github.com/terraform-aws-modules/terraform-aws-lambda/commit/a6fe4115ac96592ecbda27f72d42536da6518add))
+
+## [7.8.1](https://github.com/terraform-aws-modules/terraform-aws-lambda/compare/v7.8.0...v7.8.1) (2024-08-23)
+
+
+### Bug Fixes
+
+* Fix package.py commands after :zip not being executed ([#606](https://github.com/terraform-aws-modules/terraform-aws-lambda/issues/606)) ([801e69c](https://github.com/terraform-aws-modules/terraform-aws-lambda/commit/801e69c08b74217e7f1319b128d5efd264162aaf))
+
+## [7.8.0](https://github.com/terraform-aws-modules/terraform-aws-lambda/compare/v7.7.1...v7.8.0) (2024-08-23)
+
+
+### Features
+
+* Added the skip_destroy argument for functions ([#600](https://github.com/terraform-aws-modules/terraform-aws-lambda/issues/600)) ([36c6109](https://github.com/terraform-aws-modules/terraform-aws-lambda/commit/36c61093dbb6114f9880d40b225e7f00f83493f9))
+
+## [7.7.1](https://github.com/terraform-aws-modules/terraform-aws-lambda/compare/v7.7.0...v7.7.1) (2024-07-25)
+
+
+### Bug Fixes
+
+* Always use absolute path to temp folders ([#599](https://github.com/terraform-aws-modules/terraform-aws-lambda/issues/599)) ([a058372](https://github.com/terraform-aws-modules/terraform-aws-lambda/commit/a058372431c552a0cb740a76beffe77285edeb91))
+
+## [7.7.0](https://github.com/terraform-aws-modules/terraform-aws-lambda/compare/v7.6.0...v7.7.0) (2024-06-18)
+
+
+### Features
+
+* Added support for alias to have multiple filter criteria same as function ([#585](https://github.com/terraform-aws-modules/terraform-aws-lambda/issues/585)) ([6549ca1](https://github.com/terraform-aws-modules/terraform-aws-lambda/commit/6549ca1301c74880e41440aa314e732739283e8a))
+
+## [7.6.0](https://github.com/terraform-aws-modules/terraform-aws-lambda/compare/v7.5.0...v7.6.0) (2024-06-12)
+
+
+### Features
+
+* Support passing extra args to poetry export ([#584](https://github.com/terraform-aws-modules/terraform-aws-lambda/issues/584)) ([3aa288f](https://github.com/terraform-aws-modules/terraform-aws-lambda/commit/3aa288fee324e64a8db409e5a32abaeebe38e6c2))
+
+## [7.5.0](https://github.com/terraform-aws-modules/terraform-aws-lambda/compare/v7.4.0...v7.5.0) (2024-06-07)
+
+
+### Features
+
+* Renamed python3.8-11 to python3.12 in examples, added tag to resources ([#583](https://github.com/terraform-aws-modules/terraform-aws-lambda/issues/583)) ([02ab668](https://github.com/terraform-aws-modules/terraform-aws-lambda/commit/02ab668458c87792861a54f54fd1b00e97afcc68))
+
+## [7.4.0](https://github.com/terraform-aws-modules/terraform-aws-lambda/compare/v7.3.0...v7.4.0) (2024-05-03)
+
+
+### Features
+
+* Added support for CW log_group_class and skip_destroy ([#565](https://github.com/terraform-aws-modules/terraform-aws-lambda/issues/565)) ([7256f7c](https://github.com/terraform-aws-modules/terraform-aws-lambda/commit/7256f7c226adf294bb6280f1fc4326d015e78d83))
+
+## [7.3.0](https://github.com/terraform-aws-modules/terraform-aws-lambda/compare/v7.2.6...v7.3.0) (2024-05-03)
+
+
+### Features
+
+* Added create before destroy on aws_lambda_permission ([#561](https://github.com/terraform-aws-modules/terraform-aws-lambda/issues/561)) ([e9c4676](https://github.com/terraform-aws-modules/terraform-aws-lambda/commit/e9c467688de057a454646d5f947f3d4527f78a19))
+
+## [7.2.6](https://github.com/terraform-aws-modules/terraform-aws-lambda/compare/v7.2.5...v7.2.6) (2024-04-12)
+
+
+### Bug Fixes
+
+* Zip source directory should read from sh_work_dir ([#560](https://github.com/terraform-aws-modules/terraform-aws-lambda/issues/560)) ([f786681](https://github.com/terraform-aws-modules/terraform-aws-lambda/commit/f7866811bc1429ce224bf6a35448cb44aa5155e7))
+
+## [7.2.5](https://github.com/terraform-aws-modules/terraform-aws-lambda/compare/v7.2.4...v7.2.5) (2024-03-29)
+
+
+### Bug Fixes
+
+* Run pre-commit autoupdate (trigger patch release) ([#555](https://github.com/terraform-aws-modules/terraform-aws-lambda/issues/555)) ([8bb79de](https://github.com/terraform-aws-modules/terraform-aws-lambda/commit/8bb79de2733503aeb5824423b1a5f573ac25004d))
+
+## [7.2.4](https://github.com/terraform-aws-modules/terraform-aws-lambda/compare/v7.2.3...v7.2.4) (2024-03-29)
+
+
+### Bug Fixes
+
+* Dont raise FileNotFoundError from close() on tmpfile rename ([#550](https://github.com/terraform-aws-modules/terraform-aws-lambda/issues/550)) ([58ba987](https://github.com/terraform-aws-modules/terraform-aws-lambda/commit/58ba987a07710957abce30b4bba6587873f9b0e1))
+
+## [7.2.3](https://github.com/terraform-aws-modules/terraform-aws-lambda/compare/v7.2.2...v7.2.3) (2024-03-22)
+
+
+### Bug Fixes
+
+* Fixed constant drift with Lambda logging configuration ([#551](https://github.com/terraform-aws-modules/terraform-aws-lambda/issues/551)) ([8f97707](https://github.com/terraform-aws-modules/terraform-aws-lambda/commit/8f97707f6ea9aa3d382106a4917a0ddd1c3ec3e2))
+
+## [7.2.2](https://github.com/terraform-aws-modules/terraform-aws-lambda/compare/v7.2.1...v7.2.2) (2024-03-13)
+
+
+### Bug Fixes
+
+* Update CI workflow versions to remove deprecated runtime warnings ([#549](https://github.com/terraform-aws-modules/terraform-aws-lambda/issues/549)) ([cfe47e6](https://github.com/terraform-aws-modules/terraform-aws-lambda/commit/cfe47e63e906658dd4e8a5162ebac290b6a2cdf8))
+
+### [7.2.1](https://github.com/terraform-aws-modules/terraform-aws-lambda/compare/v7.2.0...v7.2.1) (2024-01-31)
+
+
+### Bug Fixes
+
+* Dynamic logging config for Gov Cloud ([#541](https://github.com/terraform-aws-modules/terraform-aws-lambda/issues/541)) ([b9a6ea1](https://github.com/terraform-aws-modules/terraform-aws-lambda/commit/b9a6ea18aa5b060d9d1b6e1bddfa50f60954da0d))
+
+## [7.2.0](https://github.com/terraform-aws-modules/terraform-aws-lambda/compare/v7.1.0...v7.2.0) (2024-01-26)
+
+
+### Features
+
+* Added support to override default tags of provider in S3 object ([#538](https://github.com/terraform-aws-modules/terraform-aws-lambda/issues/538)) ([e33a1a1](https://github.com/terraform-aws-modules/terraform-aws-lambda/commit/e33a1a1ad214d1c1e5aa0adb0d40c50cfd21d135))
+
+## [7.1.0](https://github.com/terraform-aws-modules/terraform-aws-lambda/compare/v7.0.0...v7.1.0) (2024-01-22)
+
+
+### Features
+
+* Commands should fail the build if their exit code is not zero ([#534](https://github.com/terraform-aws-modules/terraform-aws-lambda/issues/534)) ([eebfc36](https://github.com/terraform-aws-modules/terraform-aws-lambda/commit/eebfc3618ae290683456dc4e2fc7136857a95c57))
+
+## [7.0.0](https://github.com/terraform-aws-modules/terraform-aws-lambda/compare/v6.8.0...v7.0.0) (2024-01-19)
+
+
+### ⚠ BREAKING CHANGES
+
+* Added advanced logging configuration. Bump version of AWS provider to 5.32 (#531)
+
+### Features
+
+* Added advanced logging configuration. Bump version of AWS provider to 5.32 ([#531](https://github.com/terraform-aws-modules/terraform-aws-lambda/issues/531)) ([259b403](https://github.com/terraform-aws-modules/terraform-aws-lambda/commit/259b40300f0719179a0e5c5a0143795597329ae8))
+
+## [6.8.0](https://github.com/terraform-aws-modules/terraform-aws-lambda/compare/v6.7.1...v6.8.0) (2024-01-17)
+
+
+### Features
+
+* Allow defining direct path to pyproject.toml ([#525](https://github.com/terraform-aws-modules/terraform-aws-lambda/issues/525)) ([d33b722](https://github.com/terraform-aws-modules/terraform-aws-lambda/commit/d33b722d30e346b3966fe8f6e5d92ee554c2011d))
+
+### [6.7.1](https://github.com/terraform-aws-modules/terraform-aws-lambda/compare/v6.7.0...v6.7.1) (2024-01-15)
+
+
+### Bug Fixes
+
+* Set timeouts only when values are given ([#522](https://github.com/terraform-aws-modules/terraform-aws-lambda/issues/522)) ([b4bfe39](https://github.com/terraform-aws-modules/terraform-aws-lambda/commit/b4bfe39fab2a53607dc770bed18599a0fca5a694))
+
+## [6.7.0](https://github.com/terraform-aws-modules/terraform-aws-lambda/compare/v6.6.0...v6.7.0) (2024-01-14)
+
+
+### Features
+
+* Add control to use timestamp to trigger the package creation or not (useful for CI/CD) ([#521](https://github.com/terraform-aws-modules/terraform-aws-lambda/issues/521)) ([57dbfc1](https://github.com/terraform-aws-modules/terraform-aws-lambda/commit/57dbfc1909206bd6034b0d36883029a953c199db))
+
+## [6.6.0](https://github.com/terraform-aws-modules/terraform-aws-lambda/compare/v6.5.0...v6.6.0) (2024-01-12)
+
+
+### Features
+
+* Added support for triggers on docker_registry_image resource ([#518](https://github.com/terraform-aws-modules/terraform-aws-lambda/issues/518)) ([4ed7d19](https://github.com/terraform-aws-modules/terraform-aws-lambda/commit/4ed7d196dc26ca80daf6d04416e2a9fa91af6c1b))
+
+## [6.5.0](https://github.com/terraform-aws-modules/terraform-aws-lambda/compare/v6.4.0...v6.5.0) (2023-11-22)
+
+
+### Features
+
+* Added variable to control the create log group permission ([#514](https://github.com/terraform-aws-modules/terraform-aws-lambda/issues/514)) ([c173c27](https://github.com/terraform-aws-modules/terraform-aws-lambda/commit/c173c27fb57969da85967f2896b858c4654b0bba))
+
+## [6.4.0](https://github.com/terraform-aws-modules/terraform-aws-lambda/compare/v6.3.0...v6.4.0) (2023-11-07)
+
+
+### Features
+
+* Added support for triggers in docker-build module when hash changes ([#510](https://github.com/terraform-aws-modules/terraform-aws-lambda/issues/510)) ([41d8db7](https://github.com/terraform-aws-modules/terraform-aws-lambda/commit/41d8db71ad4fc9f56bb55c314133ce007f587e33))
+
+## [6.3.0](https://github.com/terraform-aws-modules/terraform-aws-lambda/compare/v6.2.0...v6.3.0) (2023-11-03)
+
+
+### Features
+
+* Allow to specify custom KMS key for S3 object ([#505](https://github.com/terraform-aws-modules/terraform-aws-lambda/issues/505)) ([eb339d6](https://github.com/terraform-aws-modules/terraform-aws-lambda/commit/eb339d658c232d0afa0a7f4f7902becab2a2a2e9))
+
+## [6.2.0](https://github.com/terraform-aws-modules/terraform-aws-lambda/compare/v6.1.0...v6.2.0) (2023-10-27)
+
+
+### Features
+
+* Make `compatible_runtimes` optional, added sam metadata control ([#493](https://github.com/terraform-aws-modules/terraform-aws-lambda/issues/493)) ([180da4c](https://github.com/terraform-aws-modules/terraform-aws-lambda/commit/180da4cb0a720f7138e6504700ddfe8d9c63abfd))
+
+## [6.1.0](https://github.com/terraform-aws-modules/terraform-aws-lambda/compare/v6.0.1...v6.1.0) (2023-10-27)
+
+
+### Features
+
+* Allows tags to be provided only to the function ([#508](https://github.com/terraform-aws-modules/terraform-aws-lambda/issues/508)) ([610d602](https://github.com/terraform-aws-modules/terraform-aws-lambda/commit/610d602bb2038d3c2719c14d938b303cefcccac9))
+
+### [6.0.1](https://github.com/terraform-aws-modules/terraform-aws-lambda/compare/v6.0.0...v6.0.1) (2023-10-05)
+
+
+### Bug Fixes
+
+* Fixed npm install on Windows without having to use wsl ([#502](https://github.com/terraform-aws-modules/terraform-aws-lambda/issues/502)) ([ffa56e8](https://github.com/terraform-aws-modules/terraform-aws-lambda/commit/ffa56e896d7c5e5c8cbc851f0c453b70e4ec100f))
+
+## [6.0.0](https://github.com/terraform-aws-modules/terraform-aws-lambda/compare/v5.3.0...v6.0.0) (2023-08-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* Disable creation of SAM metadata null-resources by default (#494)
+
+### Features
+
+* Disable creation of SAM metadata null-resources by default ([#494](https://github.com/terraform-aws-modules/terraform-aws-lambda/issues/494)) ([9c9603c](https://github.com/terraform-aws-modules/terraform-aws-lambda/commit/9c9603cbb889a2cda1555deaed908d320e013515))
+
+## [5.3.0](https://github.com/terraform-aws-modules/terraform-aws-lambda/compare/v5.2.0...v5.3.0) (2023-07-17)
+
+
+### Features
+
+* Added timeouts for Lambda Functions ([#485](https://github.com/terraform-aws-modules/terraform-aws-lambda/issues/485)) ([2a59ba2](https://github.com/terraform-aws-modules/terraform-aws-lambda/commit/2a59ba2948fa22dd7cb7a1c8a721fa826c3832e8))
+
+## [5.2.0](https://github.com/terraform-aws-modules/terraform-aws-lambda/compare/v5.1.0...v5.2.0) (2023-07-05)
+
+
+### Features
+
+* Add module wrappers ([#479](https://github.com/terraform-aws-modules/terraform-aws-lambda/issues/479)) ([b5e9346](https://github.com/terraform-aws-modules/terraform-aws-lambda/commit/b5e9346de58bff16a63b63f76209bdb59534105e))
+
+## [5.1.0](https://github.com/terraform-aws-modules/terraform-aws-lambda/compare/v5.0.0...v5.1.0) (2023-07-04)
+
+
+### Features
+
+* Support maximum concurrency of Lambda Alias with SQS as an event source ([#457](https://github.com/terraform-aws-modules/terraform-aws-lambda/issues/457)) ([24bd26e](https://github.com/terraform-aws-modules/terraform-aws-lambda/commit/24bd26e8d598d183a995e2742713e122ecc607a5))
+
+## [5.0.0](https://github.com/terraform-aws-modules/terraform-aws-lambda/compare/v4.18.0...v5.0.0) (2023-06-05)
+
+
+### ⚠ BREAKING CHANGES
+
+* Bump versions of Terraform to 1.0, kreuzwerker/docker provider to 3.0 (#464)
+
+### Features
+
+* Bump versions of Terraform to 1.0, kreuzwerker/docker provider to 3.0 ([#464](https://github.com/terraform-aws-modules/terraform-aws-lambda/issues/464)) ([3f2044f](https://github.com/terraform-aws-modules/terraform-aws-lambda/commit/3f2044f0d6a5cad4b37100c26b2558d1acb9b982))
+
 ## [4.18.0](https://github.com/terraform-aws-modules/terraform-aws-lambda/compare/v4.17.0...v4.18.0) (2023-05-17)
 
 
