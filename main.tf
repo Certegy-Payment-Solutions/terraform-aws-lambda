@@ -126,16 +126,6 @@ resource "aws_lambda_function" "this" {
     }
   }
 
-  dynamic "timeouts" {
-    for_each = length(var.timeouts) > 0 ? [true] : []
-
-    content {
-      create = try(var.timeouts.create, null)
-      update = try(var.timeouts.update, null)
-      delete = try(var.timeouts.delete, null)
-    }
-  }
-
   tags = merge(
     { terraform-aws-modules = "lambda" },
     var.tags,
